@@ -1,17 +1,23 @@
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Auth from './Routes/auth'; // Importing the Auth component
 import { Card, Button, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import Footer from './Footer'; // Ensure Footer is imported
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Recipe Book</Navbar.Brand>
+        <Navbar.Brand href="#home">Annapurna</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="#link">receipes</Nav.Link>
           </Nav>
+          <Nav>
+          </Nav>
+          <Nav.Link href="/auth">Login/Register</Nav.Link>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
@@ -23,7 +29,7 @@ function App() {
         <div className="row">
           <div className="col-md-4">
             <Card className="mb-4" key="spaghetti-carbonara">
-              <Card.Img variant="top" src="path_to_image" alt="Spaghetti Carbonara" />
+              <Card.Img variant="top" src="https://via.placeholder.com/150?text=Spaghetti+Carbonara" alt="Spaghetti Carbonara" />
               <Card.Body>
                 <Card.Title>Spaghetti Carbonara</Card.Title>
                 <Card.Text>
@@ -35,7 +41,7 @@ function App() {
           </div>
           <div className="col-md-4">
             <Card className="mb-4" key="chicken-curry">
-              <Card.Img variant="top" src="path_to_image" alt="Chicken Curry" />
+              <Card.Img variant="top" src="https://via.placeholder.com/150?text=Chicken+Curry" alt="Chicken Curry" />
               <Card.Body>
                 <Card.Title>Chicken Curry</Card.Title>
                 <Card.Text>
@@ -47,7 +53,7 @@ function App() {
           </div>
           <div className="col-md-4">
             <Card className="mb-4" key="chocolate-cake">
-              <Card.Img variant="top" src="path_to_image" alt="Chocolate Cake" />
+              <Card.Img variant="top" src="https://via.placeholder.com/150?text=Chocolate+Cake" alt="Chocolate Cake" />
               <Card.Body>
                 <Card.Title>Chocolate Cake</Card.Title>
                 <Card.Text>
@@ -59,7 +65,8 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+      <Footer />
+    </Router>
   );
 }
 
